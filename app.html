@@ -1,0 +1,86 @@
+<!DOCTYPE html.no-js(lang='en')>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foundation</title>
+  <script src="/head.js"></script>
+</head>
+<body>
+  <nav data-topbar="" role="navigation" class="top-bar">
+    <ul class="title-area">
+      <li class="name"><img src="/img/logo_cherry_notes.png"/></li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone-->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+    <section class="top-bar-section">
+      <!-- Right Nav Section-->
+      <ul class="right">
+        <li class="has-dropdown"><a href="#" data-current-lesson="">Lektionen</a>
+          <ul data-lesson-link-container="" class="dropdown"></ul>
+        </li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Score</a></li>
+        <li><a href="#">Rate</a></li>
+      </ul>
+    </section>
+  </nav>
+</body>
+<div class="row">
+  <div class="large-12 columns">
+    <ul data-accordion="" class="accordion">
+      <li class="accordion-navigation active"><a href="#panel1a" class="fa"><span data-lesson-title=""></span>&nbsp;<i></i></a>
+        <div id="panel1a" data-lesson-task="" class="content active"></div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 columns">
+    <!--
+    <a href="javascript: void 0" class="play">
+    <i class="fa fa-play"></i>
+    </a>
+    -->
+    <div class="vextab">
+      <div class="vex-wrapper">
+        <div width="318" scale="1" editor="true" class="vex-tabdiv"></div>
+      </div>
+    </div>
+    <div class="modifiers">
+      <div class="octaves">
+        <label>Oktave:</label>
+        <input type="radio" name="octave" value="4" checked=""/>
+        <label for="four">4</label>
+        <input type="radio" name="octave" value="5"/>
+        <label for="five">5</label>
+      </div>
+      <div class="signs">
+        <label>Vorzeichen:</label>
+        <input type="radio" name="sign" value="" checked=""/>
+        <label for="unsigned">ohne</label>
+        <input type="radio" name="sign" value="#"/>
+        <label for="sharp">&sharp;</label>
+        <input type="radio" name="sign" value="@"/>
+        <label for="flat">&flat;</label>
+      </div>
+      <div class="rhythm">
+        <label>Rhythmus:</label>
+        <input type="radio" name="rhythm" value=":1"/>
+        <label for="wholeNote">1</label>
+        <input type="radio" name="rhythm" value=":2"/>
+        <label for="halfNote"><sup>1</sup>&frasl;<sub>2</sub></label>
+        <input type="radio" name="rhythm" value=":4" checked=""/>
+        <label for="quarterNote"><sup>1</sup>&frasl;<sub>4</sub></label>
+        <input type="radio" name="rhythm" value=":8"/>
+        <label for="eighthNote"><sup>1</sup>&frasl;<sub>8</sub></label>
+        <input type="radio" name="rhythm" value=":16"/>
+        <label for="sixteenthNote"><sup>1</sup>&frasl;<sub>16</sub></label>
+      </div>
+    </div>
+    <div class="notes"><a href="#" data-value="C" class="button radius tiny secondary">C</a><a href="#" data-value="D" class="button radius tiny secondary">D</a><a href="#" data-value="E" class="button radius tiny secondary">E</a><a href="#" data-value="F" class="button radius tiny secondary">F</a><a href="#" data-value="G" class="button radius tiny secondary">G</a><a href="#" data-value="A" class="button radius tiny secondary">A</a><a href="#" data-value="B" class="button radius tiny secondary">H</a><a href="#" data-value="empty" class="button radius tiny info"><i class="fa fa-trash"></i></a></div>
+  </div>
+</div>
+<footer>
+  <div class="right"><a href="#" class="button success lesson-success">n&auml;chste Lektion</a></div>
+</footer>
+<script src="/app.js"></script>
