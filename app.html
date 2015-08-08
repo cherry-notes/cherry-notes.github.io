@@ -36,15 +36,10 @@
 </div>
 <div class="row">
   <div class="large-12 columns">
-    <!--
-    <a href="javascript: void 0" class="play">
-    <i class="fa fa-play"></i>
-    </a>
-    -->
     <div class="vextab">
-      <div class="vex-wrapper">
-        <div width="318" scale="1" editor="true" class="vex-tabdiv"></div>
-      </div>
+      <div id="write-cursor" class="note-cursor"></div>
+      <div id="play-cursor" class="note-cursor"></div>
+      <!-- canvas will be injected here-->
     </div>
     <div class="modifiers">
       <div class="octaves">
@@ -60,26 +55,30 @@
         <label for="unsigned">ohne</label>
         <input type="radio" name="sign" value="#"/>
         <label for="sharp">&sharp;</label>
-        <input type="radio" name="sign" value="@"/>
+        <input type="radio" name="sign" value="b"/>
         <label for="flat">&flat;</label>
       </div>
       <div class="rhythm">
         <label>Rhythmus:</label>
-        <input type="radio" name="rhythm" value=":1"/>
+        <input type="radio" name="rhythm" value="1"/>
         <label for="wholeNote">1</label>
-        <input type="radio" name="rhythm" value=":2"/>
+        <input type="radio" name="rhythm" value="2"/>
         <label for="halfNote"><sup>1</sup>&frasl;<sub>2</sub></label>
-        <input type="radio" name="rhythm" value=":4" checked=""/>
+        <input type="radio" name="rhythm" value="4" checked=""/>
         <label for="quarterNote"><sup>1</sup>&frasl;<sub>4</sub></label>
-        <input type="radio" name="rhythm" value=":8"/>
+        <input type="radio" name="rhythm" value="8"/>
         <label for="eighthNote"><sup>1</sup>&frasl;<sub>8</sub></label>
-        <input type="radio" name="rhythm" value=":16"/>
+        <input type="radio" name="rhythm" value="16"/>
         <label for="sixteenthNote"><sup>1</sup>&frasl;<sub>16</sub></label>
       </div>
     </div>
-    <div class="notes"><a href="#" data-value="C" class="button radius tiny secondary">C</a><a href="#" data-value="D" class="button radius tiny secondary">D</a><a href="#" data-value="E" class="button radius tiny secondary">E</a><a href="#" data-value="F" class="button radius tiny secondary">F</a><a href="#" data-value="G" class="button radius tiny secondary">G</a><a href="#" data-value="A" class="button radius tiny secondary">A</a><a href="#" data-value="B" class="button radius tiny secondary">H</a><a href="#" data-value="empty" class="button radius tiny info"><i class="fa fa-trash"></i></a></div>
+    <div class="notes-conrols">
+      <div class="notes margin-between"><a href="#" data-value="C" class="button tiny secondary">C</a><a href="#" data-value="D" class="button tiny secondary">D</a><a href="#" data-value="E" class="button tiny secondary">E</a><a href="#" data-value="F" class="button tiny secondary">F</a><a href="#" data-value="G" class="button tiny secondary">G</a><a href="#" data-value="A" class="button tiny secondary">A</a><a href="#" data-value="B" class="button tiny secondary">H</a></div>
+      <div class="notes-actions"><a href="#" data-value="play" class="button tiny info"><i class="fa fa-play"></i></a><a href="#" data-value="stop" class="button tiny info"><i class="fa fa-stop"></i></a><span> </span><a href="#" data-value="backspace" class="button tiny info"><i class="fa fa-undo"></i></a><a href="#" data-value="clean" class="button tiny info"><i class="fa fa-trash"></i></a></div>
+    </div>
   </div>
 </div>
+<div class="buffer"></div>
 <footer>
   <div class="right"><a href="#" class="button success lesson-success">n&auml;chste Lektion</a></div>
 </footer>
