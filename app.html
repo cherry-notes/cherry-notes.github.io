@@ -2,84 +2,98 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Foundation</title>
+  <title>cherry notes</title>
   <script src="/head.js"></script>
-</head>
-<body>
-  <nav data-topbar="" role="navigation" class="top-bar">
-    <ul class="title-area">
-      <li class="name"><img src="/img/logo_cherry_notes.png"/></li>
-      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone-->
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
-    <section class="top-bar-section">
-      <!-- Right Nav Section-->
-      <ul class="right">
-        <li class="has-dropdown"><a href="#" data-current-lesson="">Lektionen</a>
-          <ul data-lesson-link-container="" class="dropdown"></ul>
-        </li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Score</a></li>
-        <li><a href="#">Rate</a></li>
+  <body>
+    <nav data-topbar="" role="navigation" class="top-bar">
+      <ul class="title-area"><a href="/">
+          <li class="name"><img src="/img/logo_cherry_notes.png"/></li></a>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone-->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
-    </section>
-  </nav>
-</body>
-<div class="row">
-  <div class="large-12 columns">
-    <ul data-accordion="" class="accordion">
-      <li class="accordion-navigation active"><a href="#panel1a" class="fa"><span data-lesson-title=""></span>&nbsp;<i></i></a>
-        <div id="panel1a" data-lesson-task="" class="content active"></div>
-      </li>
-    </ul>
-  </div>
-</div>
-<div class="row">
-  <div class="large-12 columns">
-    <div class="vextab">
-      <div id="write-cursor" class="note-cursor"></div>
-      <div id="play-cursor" class="note-cursor"></div>
-      <!-- canvas will be injected here-->
-    </div>
-    <div class="modifiers">
-      <div class="octaves">
-        <label>Oktave:</label>
-        <input type="radio" name="octave" value="4" checked=""/>
-        <label for="four">4</label>
-        <input type="radio" name="octave" value="5"/>
-        <label for="five">5</label>
-      </div>
-      <div class="signs">
-        <label>Vorzeichen:</label>
-        <input type="radio" name="sign" value="" checked=""/>
-        <label for="unsigned">ohne</label>
-        <input type="radio" name="sign" value="#"/>
-        <label for="sharp">&sharp;</label>
-        <input type="radio" name="sign" value="b"/>
-        <label for="flat">&flat;</label>
-      </div>
-      <div class="rhythm">
-        <label>Rhythmus:</label>
-        <input type="radio" name="rhythm" value="1"/>
-        <label for="wholeNote">1</label>
-        <input type="radio" name="rhythm" value="2"/>
-        <label for="halfNote"><sup>1</sup>&frasl;<sub>2</sub></label>
-        <input type="radio" name="rhythm" value="4" checked=""/>
-        <label for="quarterNote"><sup>1</sup>&frasl;<sub>4</sub></label>
-        <input type="radio" name="rhythm" value="8"/>
-        <label for="eighthNote"><sup>1</sup>&frasl;<sub>8</sub></label>
-        <input type="radio" name="rhythm" value="16"/>
-        <label for="sixteenthNote"><sup>1</sup>&frasl;<sub>16</sub></label>
-      </div>
-    </div>
-    <div class="notes-conrols">
-      <div class="notes margin-between"><a href="#" data-value="C" class="button tiny secondary">C</a><a href="#" data-value="D" class="button tiny secondary">D</a><a href="#" data-value="E" class="button tiny secondary">E</a><a href="#" data-value="F" class="button tiny secondary">F</a><a href="#" data-value="G" class="button tiny secondary">G</a><a href="#" data-value="A" class="button tiny secondary">A</a><a href="#" data-value="B" class="button tiny secondary">H</a></div>
-      <div class="notes-actions"><a href="#" data-value="play" class="button tiny info"><i class="fa fa-play"></i></a><a href="#" data-value="stop" class="button tiny info"><i class="fa fa-stop"></i></a><span> </span><a href="#" data-value="backspace" class="button tiny info"><i class="fa fa-undo"></i></a><a href="#" data-value="clean" class="button tiny info"><i class="fa fa-trash"></i></a></div>
+      <section class="top-bar-section">
+        <!-- Right Nav Section-->
+        <ul class="right">
+          <li class="has-dropdown"><a href="#" data-current-lesson="">Lektionen</a>
+            <ul data-lesson-link-container="" class="dropdown"></ul>
+          </li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Score</a></li>
+          <li><a href="#">Rate</a></li>
+        </ul>
+      </section>
+    </nav>
+  </body>
+  <div class="row">
+    <div class="large-12 columns">
+      <ul data-tab="data-tab" class="tabs">
+        <li class="tab-title lesson"><a href="#panel-lesson">Beschreibung</a></li>
+        <li class="tab-title exercise"><a href="#panel-exercise">Aufgabe</a></li>
+      </ul>
     </div>
   </div>
-</div>
-<div class="buffer"></div>
-<footer>
-  <div class="right"><a href="#" class="button success lesson-success">n&auml;chste Lektion</a></div>
-</footer>
-<script src="/app.js"></script>
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="tabs-content">
+        <h3 data-lesson-title="data-lesson-title"></h3>
+        <div id="panel-lesson" class="content">
+          <div data-lesson-description="data-lesson-description" class="data-lesson-content"></div>
+          <div class="vexflow lesson">
+            <div id="play-cursor" class="note-cursor"></div>
+          </div>
+          <div class="notes-controls">
+            <div class="notes-actions"><a href="#" data-value="play" class="button tiny info"><i class="fa fa-play"></i></a><a href="#" data-value="stop" class="button tiny info"><i class="fa fa-stop"></i></a><span> </span><a href="#" data-value="backspace" class="button tiny info"><i class="fa fa-undo"></i></a><a href="#" data-value="clean" class="button tiny info"><i class="fa fa-trash"></i></a></div>
+          </div>
+        </div>
+        <div id="panel-exercise" class="content">
+          <div data-lessons-exercise="data-lessons-exercise" class="data-lesson-content"></div>
+          <div class="vexflow exercise">
+            <div id="write-cursor" class="note-cursor"></div>
+            <div id="play-cursor" class="note-cursor"></div>
+            <!-- canvas will be injected here-->
+          </div>
+          <div class="modifiers">
+            <div class="octaves">
+              <label>Oktave:</label>
+              <input id="octave4" type="radio" name="octave" value="4"/>
+              <label for="octave4">4</label>
+              <input id="octave5" type="radio" name="octave" value="5"/>
+              <label for="octave5">5</label>
+            </div>
+            <div class="signs">
+              <label>Vorzeichen:</label>
+              <input id="accidental-none" type="radio" name="sign" value=""/>
+              <label for="accidental-none">ohne</label>
+              <input id="accidental-sharp" type="radio" name="sign" value="#"/>
+              <label for="accidental-sharp">&sharp;</label>
+              <input id="accidental-flat" type="radio" name="sign" value="b"/>
+              <label for="accidental-flat">&flat;</label>
+            </div>
+            <div class="rhythm">
+              <label>Rhythmus:</label>
+              <input id="rhythm-1-1" type="radio" name="rhythm" value="1"/>
+              <label for="rhythm-1-1">1</label>
+              <input id="rhythm-1-2" type="radio" name="rhythm" value="2"/>
+              <label for="rhythm-1-2"><sup>1</sup>&frasl;<sub>2</sub></label>
+              <input id="rhythm-1-4" type="radio" name="rhythm" value="4"/>
+              <label for="rhythm-1-4"><sup>1</sup>&frasl;<sub>4</sub></label>
+              <input id="rhythm-1-8" type="radio" name="rhythm" value="8"/>
+              <label for="rhythm-1-8"><sup>1</sup>&frasl;<sub>8</sub></label>
+              <input id="rhythm-1-16" type="radio" name="rhythm" value="16"/>
+              <label for="rhythm-1-16"><sup>1</sup>&frasl;<sub>16</sub></label>
+            </div>
+          </div>
+          <div class="notes-controls">
+            <div class="notes margin-between"><a href="#" data-value="C" class="button tiny secondary">C</a><a href="#" data-value="D" class="button tiny secondary">D</a><a href="#" data-value="E" class="button tiny secondary">E</a><a href="#" data-value="F" class="button tiny secondary">F</a><a href="#" data-value="G" class="button tiny secondary">G</a><a href="#" data-value="A" class="button tiny secondary">A</a><a href="#" data-value="B" class="button tiny secondary">H</a></div>
+            <div class="notes-actions"><a href="#" data-value="play" class="button tiny info"><i class="fa fa-play"></i></a><a href="#" data-value="stop" class="button tiny info"><i class="fa fa-stop"></i></a><span> </span><a href="#" data-value="backspace" class="button tiny info"><i class="fa fa-undo"></i></a><a href="#" data-value="clean" class="button tiny info"><i class="fa fa-trash"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buffer"></div>
+  <footer>
+    <div class="right"><a href="#" class="button success lesson-success">n&auml;chste Übung</a></div>
+  </footer>
+  <script src="/app.js"></script>
+</head>
