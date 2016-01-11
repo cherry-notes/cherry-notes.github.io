@@ -37,12 +37,11 @@
       NProgress.set(0.0);
       var req = new XMLHttpRequest();
       req.addEventListener("progress", function(event) {
-          if (event.lengthComputable) {
-              var percentComplete = event.loaded / event.total;
-              NProgress.set(percentComplete);
-          }
+        var percentComplete = event.loaded / (event.total||2394142);
+        NProgress.set(percentComplete);
       }, false);
       req.addEventListener("load", function(event) {
+        NProgress.set(1.0);
         var e = event.target;
         var s = document.createElement("script");
         s.innerHTML = e.responseText;
