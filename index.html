@@ -1,49 +1,75 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>cherry notes</title>
-  <script src="/head.js"></script>
-</head>
-<body>
-    <nav data-topbar="" role="navigation" class="top-bar">
-      <ul class="title-area"><a href="/">
-          <li class="name"><img src="/img/logo_cherry_notes.png"/></li></a>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone-->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
-      <section class="top-bar-section">
-        <!-- Right Nav Section-->
-        <ul class="right">
-          <li class="has-dropdown"><a href="#" data-current-lesson="">Lektionen</a>
-            <ul data-lesson-link-container="" class="dropdown"></ul>
-          </li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="#">Score</a></li>
-          <li><a href="#">Rate</a></li>
-        </ul>
-      </section>
-    </nav>
-
-  <section class="backgroundImage"></section>
-  <div class="row">
-    <div class="large-12 columns">
-      <h1>Music. Sounds. Good.</h1>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><a href="/app.html" class="cta">Try for free</a>
+  <head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>🍒🎶Cherry Notes</title>
+    <style>
+      body #nprogress .spinner {
+        display: none;
+      }
+      .spinner {
+        margin: 50px auto;
+        height: 28px;
+        width: 28px;
+        animation: rotate 0.8s infinite linear;
+        border: 8px solid #000;
+        border-right-color: transparent;
+        border-radius: 50%;
+      }
+      @keyframes rotate {
+        0%    { transform: rotate(0deg); }
+        100%  { transform: rotate(360deg); }
+      }
+      .label {
+        text-align: center;
+      }
+    </style>
+    <style>#nprogress{pointer-events:none}#nprogress .bar{background:#29d;position:fixed;z-index:1031;top:0;left:0;width:100%;height:2px}#nprogress .peg{display:block;position:absolute;right:0;width:100px;height:100%;box-shadow:0 0 10px #29d,0 0 5px #29d;opacity:1;-webkit-transform:rotate(3deg) translate(0,-4px);-ms-transform:rotate(3deg) translate(0,-4px);transform:rotate(3deg) translate(0,-4px)}</style>
+    <script src='/static/nprogress.js'></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="spinner"></div>
     </div>
-  </div>
-  <script src="/app.js"></script>
-  <script>
+    <script>
+      NProgress.start();
+      NProgress.set(0.0);
+      var req = new XMLHttpRequest();
+      req.addEventListener("progress", function(event) {
+          if (event.lengthComputable) {
+              var percentComplete = event.loaded / event.total;
+              NProgress.set(percentComplete);
+          }
+      }, false);
+      req.addEventListener("load", function(event) {
+        var e = event.target;
+        var s = document.createElement("script");
+        s.innerHTML = e.responseText;
+        document.documentElement.appendChild(s);
+      }, false);
+      req.open("GET", "/static/bundle.js");
+      req.send();
+    </script>
+    <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', {
-        trackingId: 'UA-70840374-1',
-        cookieDomain: 'none'
-      });
-      ga('send', 'pageview');
-  </script>
-</body>
+      var userId = localStorage.getItem('user-id');
+      if (userId != null) {
+        ga('create', {
+          trackingId: 'UA-70840374-1',
+          cookieDomain: 'none',
+          userId
+        });
+      } else {
+        ga('create', {
+          trackingId: 'UA-70840374-1',
+          cookieDomain: 'none'
+        });
+      }
+      ga('send', 'pageview', window.location.pathname);
+    </script>
+  </body>
 </html>
