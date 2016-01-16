@@ -37,7 +37,7 @@
       NProgress.set(0.0);
       var req = new XMLHttpRequest();
       req.addEventListener("progress", function(event) {
-        var percentComplete = event.loaded / (event.total||2402881);
+        var percentComplete = event.loaded / (event.total||2465295);
         NProgress.set(percentComplete);
       }, false);
       req.addEventListener("load", function(event) {
@@ -58,10 +58,12 @@
         woopra.config({
             domain: 'app.cherry-notes.com'
         });
-        // woopra.identify({
-        //   name: "John Doe"
-        //   email: "joh@doe.com",
-        // });
+        var name = localStorage.getItem('name')
+        if (name != null) {
+          woopra.identify({
+            name: name
+          });
+        }
         woopra.track();
       }
     </script>
