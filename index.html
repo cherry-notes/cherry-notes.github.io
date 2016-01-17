@@ -26,47 +26,75 @@
       }
     </style>
     <style>#nprogress{pointer-events:none}#nprogress .bar{background:#29d;position:fixed;z-index:1031;top:0;left:0;width:100%;height:2px}#nprogress .peg{display:block;position:absolute;right:0;width:100px;height:100%;box-shadow:0 0 10px #29d,0 0 5px #29d;opacity:1;-webkit-transform:rotate(3deg) translate(0,-4px);-ms-transform:rotate(3deg) translate(0,-4px);transform:rotate(3deg) translate(0,-4px)}</style>
+    <script src="http://localhost:8080/remote.js?iufaiuhdfsöiufhsd"></script>
+    <script>console.log('1');</script>
     <script src='/static/nprogress.js'></script>
+    <script>console.log('2');</script>
     <script type="text/javascript" src="https://www.newsletter2go.de/pr/conversion/nl2goconversion.js?7c6aec"></script>
+    <script>console.log('3');</script>
   </head>
   <body>
     <div id="root">
       <div class="spinner"></div>
     </div>
     <script>
+      console.log('a');
       NProgress.start();
       NProgress.set(0.0);
+      console.log('b');
       var req = new XMLHttpRequest();
+      console.log('c');
       req.addEventListener("progress", function(event) {
+        console.log('h');
         var percentComplete = event.loaded / (event.total||2466496);
+        console.log('i');
         NProgress.set(percentComplete);
+        console.log('j');
       }, false);
+      console.log('d');
       req.addEventListener("load", function(event) {
+        console.log('k');
         NProgress.set(1.0);
         var e = event.target;
         var s = document.createElement("script");
+        console.log('l');
         s.innerHTML = e.responseText;
+        console.log('m');
         document.documentElement.appendChild(s);
+        console.log('n');
       }, false);
+      console.log('e');
       req.open("GET", "/static/bundle.js");
+      console.log('f');
       req.send();
+      console.log('g');
     </script>
+    <script>console.log('4');</script>
     <script>
+      console.log('I');
       if (window.location.host.indexOf('localhost') === -1) {
+        console.log('II');
         (function(){
           var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
         })("woopra");
+        console.log('III');
         woopra.config({
             domain: 'app.cherry-notes.com'
         });
+        console.log('IV');
         var id = localStorage.getItem('id')
+        console.log('V');
         if (id != null) {
+          console.log('VI');
           woopra.identify({
             email: id
           });
+          console.log('VII');
         }
         woopra.track();
+        console.log('VIII');
       }
     </script>
+    <script>console.log('5');</script>
   </body>
 </html>
