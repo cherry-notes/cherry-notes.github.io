@@ -1,3 +1,10 @@
+## 1.0.0-alpha4 (2016-01-28)
+
+Improvements:
+
+- put space (left and right) around piano keyboard to allow scrolling on small screens
+- update course content (improve wording)
+
 ## 1.0.0-alpha3 (2016-01-26)
 
 Bugfixes:
@@ -12,6 +19,7 @@ Improvements:
 - show alert when browser doesn't support Web Audio to play notes
 - improve focus/blur events for buttons
 - provide form validation across different browser in feedback form
+- allow zooming on touch devices (pinch)
 
 ## 1.0.0-alpha2 (2016-01-16)
 
