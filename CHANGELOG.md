@@ -1,3 +1,17 @@
+## 1.0.0-alpha5 (2016-02-01)
+
+Improvements:
+
+- piano keyboard has a layer to lock the keys to avoid conflicts when scrolling
+- improve layout of button and adjust the size
+- show lesson menu only on active course
+
+Bugfixes:
+
+- show localized note name in the musical staff (H instead of B)
+- hide overlapping breadcrumbs on small screens when orientation is wrong
+- adjust height (equal height for all) of containers on course overview
+
 ## 1.0.0-alpha4 (2016-01-28)
 
 Improvements:
