@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# version: 1.0.0-alpha6 hash:3d0790e27ac2ece481855467a246777564267f8d Tue Feb 02 2016 22:12:35 GMT+0100 (CET)
+# version: 1.0.0-alpha6 hash:3d0790e27ac2ece481855467a246777564267f8d Tue Feb 02 2016 22:17:10 GMT+0100 (CET)
 
 CACHE:
 #/favicon.ico
@@ -11,3 +11,6 @@ static/bundle.js
 static/c68296748f806654fa4567c8725bd16b.png
 static/db812d8a70a4e88e888744c1c9a27e89.woff2
 static/nprogress.js
+
+NETWORK:
+*
