@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="cache.appcache">
   <head>
     <meta charset='utf-8'/>
     <meta name="viewport" content="width=device-width">
@@ -37,7 +37,7 @@
       NProgress.set(0.0);
       var req = new XMLHttpRequest();
       req.addEventListener("progress", function(event) {
-        var percentComplete = event.loaded / (event.total||2472320);
+        var percentComplete = event.loaded / (event.total||2474348);
         NProgress.set(percentComplete);
       }, false);
       req.addEventListener("load", function(event) {
