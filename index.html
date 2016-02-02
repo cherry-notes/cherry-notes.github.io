@@ -37,7 +37,7 @@
       NProgress.set(0.0);
       var req = new XMLHttpRequest();
       req.addEventListener("progress", function(event) {
-        var percentComplete = event.loaded / (event.total||2474348);
+        var percentComplete = event.loaded / (event.total||2474315);
         NProgress.set(percentComplete);
       }, false);
       req.addEventListener("load", function(event) {
