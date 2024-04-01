@@ -37,7 +37,7 @@
       NProgress.set(0.0);
       var req = new XMLHttpRequest();
       req.addEventListener("progress", function(event) {
-        var percentComplete = event.loaded / (event.total||2474318);
+        var percentComplete = event.loaded / (event.total||3111388);
         NProgress.set(percentComplete);
       }, false);
       req.addEventListener("load", function(event) {
@@ -52,22 +52,22 @@
     </script>
     <script>
       if (window.location.host.indexOf('app.cherry-notes.com') != -1) {
-        var tmp = document.createElement("script");
-        tmp.setAttribute('href', '"https://www.newsletter2go.de/pr/conversion/nl2goconversion.js?7c6aec"');
-        document.documentElement.appendChild(tmp);
-        (function(){
-          var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
-        })("woopra");
-        woopra.config({
-            domain: 'app.cherry-notes.com'
-        });
-        var id = localStorage.getItem('id')
-        if (id != null) {
-          woopra.identify({
-            email: id
-          });
-        }
-        woopra.track();
+        // var tmp = document.createElement("script");
+        // tmp.setAttribute('href', '"https://www.newsletter2go.de/pr/conversion/nl2goconversion.js?7c6aec"');
+        // document.documentElement.appendChild(tmp);
+        // (function(){
+        //   var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+        // })("woopra");
+        // woopra.config({
+        //     domain: 'app.cherry-notes.com'
+        // });
+        // var id = localStorage.getItem('id')
+        // if (id != null) {
+        //   woopra.identify({
+        //     email: id
+        //   });
+        // }
+        // woopra.track();
       }
     </script>
   </body>

@@ -1,15 +1,15 @@
 CACHE MANIFEST
-# version: 1.0.0-alpha6 hash:d7b967030494e258bf9249b39e60b960bef16463 Tue Feb 02 2016 23:45:15 GMT+0100 (CET)
+# version: 1.0.0-alpha6 hash:b7d919b10a49a4d48fc923340b402c3dcd3a9a72 Mon Apr 01 2024 08:55:49 GMT+0300 (Osteuropäische Sommerzeit)
 
 CACHE:
 #/favicon.ico
 index.html
 static/37316bd6d8f1ff87078cd059ce730e4e.png
 static/6090e579dc282b2d148fb02243c6ea9f.png
-static/a35720c2fed2c7f043bc7e4ffb45e073.woff
+static/af7ae505a9eed503f8b8e6982036873e.woff2
 static/bundle.js
 static/c68296748f806654fa4567c8725bd16b.png
-static/db812d8a70a4e88e888744c1c9a27e89.woff2
+static/fee66e712a8a08eef5805a46892932ad.woff
 static/nprogress.js
 
 NETWORK:
